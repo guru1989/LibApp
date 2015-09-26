@@ -1,0 +1,60 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-25 17:35:13 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (5.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 4148ms (Views: 4095.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-641ef89541631d05480399ec2a6e21c442aa67a6796728284b9210a32cec2154.css?body=1" for 127.0.0.1 at 2015-09-25 17:35:18 -0700
+
+
+Started GET "/login" for 127.0.0.1 at 2015-09-25 17:35:23 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (94.6ms)
+Completed 200 OK in 220ms (Views: 208.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-09-25 17:35:35 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sNrJCftJodx34G5gWgM71iHrbpaXTdPwHaGVR0DfPxl8KQ9VVIM2NQoouVpD95HDh2z5NPu16EHXaLlhyHb0zA==", "session"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "option"=>"member"}, "commit"=>"Login"}
+  [1m[35mAdmin Load (7.6ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT 1  [["email", "admin@admin.com"]]
+  [1m[36mMember Load (0.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."email" = ? LIMIT 1[0m  [["email", "admin@admin.com"]]
+  Rendered sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 398ms (Views: 271.5ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-09-25 17:35:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CfPM2DlS+s4H0f2BqBvnM5+yoHaWgjHAgqWO9zQc4urFAAqElphtJ3oZKrux700mOTU31Pp6CnFIbKLRvLUpPw==", "session"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "option"=>"admin"}, "commit"=>"Login"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT 1  [["email", "admin@admin.com"]]
+  [1m[36mMember Load (0.1ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."email" = ? LIMIT 1[0m  [["email", "admin@admin.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-25 17:35:49 -0700
+Processing by WelcomeController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered welcome/index.html.erb within layouts/application (19.6ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 206ms (Views: 204.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2015-09-25 17:35:51 -0700
+Processing by AdminsController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE ("admins"."name" != ?)[0m  [["name", "admin"]]
+  Rendered admins/index.html.erb within layouts/application (6.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 124ms (Views: 120.6ms | ActiveRecord: 0.6ms)
