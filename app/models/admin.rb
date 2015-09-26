@@ -5,6 +5,6 @@ class Admin < ActiveRecord::Base
 	validates :password, length: { in: 6..20 }
 	before_destroy :destroyable?
   	def destroyable?
-    	name != "admin"
+    	email != "super@admin.com"
   	end
 end
