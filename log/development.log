@@ -58,3 +58,109 @@ Processing by AdminsController#index as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
 Completed 200 OK in 124ms (Views: 120.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-26 00:02:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1311ms (Views: 1303.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-09-26 00:02:50 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 108ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-09-26 00:03:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umRaq0Y6SsJID9a+5yAEHIQ8wEFqoBkQC77WUzJ9jROmta7iILDi7tsPO4ww+bYV9aosgL5Uwl2WH2Fpu4TxWA==", "session"=>{"email"=>"super@admin.com", "password"=>"[FILTERED]", "option"=>"admin"}, "commit"=>"Login"}
+  [1m[35mAdmin Load (24.9ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? LIMIT 1  [["email", "super@admin.com"]]
+  [1m[36mMember Load (0.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."email" = ? LIMIT 1[0m  [["email", "super@admin.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-26 00:03:04 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-09-26 00:03:08 -0400
+Processing by BooksController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 79ms (Views: 67.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-26 00:03:16 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2015-09-26 00:03:19 -0400
+Processing by AdminsController#index as HTML
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE ("admins"."name" != ?)  [["name", "superadmin"]]
+  Rendered admins/index.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 84ms (Views: 82.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-26 00:03:23 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 79ms (Views: 78.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-09-26 00:03:25 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n5MOvyh5UOQXDgK7eFGWkFg32j5yT4KfgEH8VI1F6eGDQvr2TvP4yIQO74mviCSZKaE2/6a7WdId4EtuBLyVqg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-26 00:03:25 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2015-09-26 00:03:28 -0400
+Processing by MembersController#signup as HTML
+  Rendered members/_signup.html.erb (14.7ms)
+  Rendered members/signup.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 120ms (Views: 116.2ms | ActiveRecord: 0.2ms)

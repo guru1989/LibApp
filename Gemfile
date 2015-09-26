@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem "heroku"
 gem 'validates_email_format_of'
 
 group :development, :test do
@@ -49,6 +50,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
+  gem 'thin'
 end
 
 
