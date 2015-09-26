@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin.email %>
+</p>
+
+<p>
+  <%if current_user.id.eql? @admin.id %>
+    <strong>Password:</strong>
+  	<%= @admin.password %>
+  <%end%>
+</p>
+
+<p><%= link_to 'Edit Profile', edit_admin_path(@admin) %></p>
+<p><%= link_to 'Logout', logout_path, method: "delete" %><p>
+

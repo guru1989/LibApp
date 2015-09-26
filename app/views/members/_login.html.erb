@@ -1,0 +1,15 @@
+<div id="notice" ><%= flash.now[:notice] unless flash.now[:notice].nil? %></p>
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+<% end %>
+    </div>

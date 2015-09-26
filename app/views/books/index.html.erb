@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<div style="text-align: center">
+
+<h1 >Books</h1><br>
+
+  <table align="center" style="margin: 0px auto;" border="1">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Name</th>
+      <th>Authors</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each_with_index do |book| %>
+      <tr>
+        <td><%= book.isbn %> </td>
+        <td><%= book.name %></td>
+        <td><%= book.authors %></td>
+
+        <% if is_admin? %>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+
+

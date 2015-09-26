@@ -1,0 +1,22 @@
+<div style="text-align: center">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @member.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @member.password %>
+</p>
+
+<p><%= link_to 'Edit Profile', edit_member_path(@member)%>
+<p><%= link_to 'Logout', logout_path, method: "delete" %><p>
+</div>
+
