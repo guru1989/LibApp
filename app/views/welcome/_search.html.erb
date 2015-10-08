@@ -1,6 +1,22 @@
 <%= form_tag books_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+
+  <div class="form-group">
+
+     <p>Search by</p>
+     <%= radio_button_tag(:search_option, "name", checked:true) %>
+     <%= label_tag :search_option, "Title" ,class: "search" %>
+
+     <%= radio_button_tag(:search_option, "author") %>
+     <%= label_tag :search_option, "Author"  ,class: "search"%>
+
+     <%= radio_button_tag(:search_option, "isbn") %>
+     <%= label_tag :search_option, "ISBN" ,class: "search" %>
+     <br/><br/>
+
+     <label for="search">Enter search phrase ...</label>
+     <%= text_field_tag :search, params[:search] ,class: "search"%>
+
+     <%= submit_tag "Search", :name => nil ,class: "btn-sm btn-primary" %>
+
+   </div>
+ <% end %>
