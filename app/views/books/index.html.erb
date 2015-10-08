@@ -25,6 +25,7 @@
 
         <% if is_admin? %>
           <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'View Details', book_path(book) %></td>
           <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
         <td>
@@ -32,11 +33,13 @@
 
               <%if  is_admin? %>
 
-                  <%else%>
-            <%= link_to 'Check out', checkout_path(book.id),class: "btn-sm btn-success" %></td>
-                  <%end%>
+              <%else%>
+                <%= link_to 'Check out', checkout_path(book.id),class: "btn-sm btn-success" %></td>
+              <%end%>
         <%else%>
-            <%if is_admin? or current_user.books.where(isbn: book.isbn).count.odd? %>
+            <%if is_admin? %>
+
+                  <%elsif current_user.books.where(isbn: book.isbn).count.odd? %>
                 <%= link_to 'Return Book', checkin_path(book.id), class: "btn-sm btn-warning" %>
             <%end%>
          <%end%>

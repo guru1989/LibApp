@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'checkin/:id' => 'book_transactions#checkin' , as: "checkin"
   post 'checkin' => 'book_transactions#create2'
 
-  resources :books, param: :isbn
+  resources :books
   resources :members
   resources :book_transactions
 
