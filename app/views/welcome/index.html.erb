@@ -1,10 +1,11 @@
 <div id="privileges"><%= flash[:privileges] %></div>
 
 <% @title = "Welcome" %>
+<%= render "search" %>
 <%x = logged_in? %>
 <% unless x.nil? %>
 
- <div style="text-align: center">
+<div style="text-align: center">
 <h3 style="text-align: center"><%= link_to "View available books", books_path %></h3>
 <% if is_admin? %>
        <p><%= link_to 'Add an Admin', new_admin_path %></p>

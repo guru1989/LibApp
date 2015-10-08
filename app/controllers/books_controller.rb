@@ -12,8 +12,21 @@ class BooksController < ApplicationController
       redirect_to login_path
     end
   end 
+
   def index
-    @books = Book.all
+    if params[:search_option].present?
+      if (params[:search_option] == "isbn")
+        @books = Book.where(isbn: params[:search])
+      elsif (params[:search_option] == "author")
+        @books = Book.where("authors ILIKE '%#{params[:search]}%'")
+      else
+        # Search by title/name
+        @books = Book.where("name ILIKE '%#{params[:search]}%'")
+      end
+    else
+      # Show all books
+      @books = Book.all
+    end
   end
 
   # GET /books/1
