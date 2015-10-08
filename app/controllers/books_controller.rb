@@ -18,10 +18,10 @@ class BooksController < ApplicationController
       if (params[:search_option] == "isbn")
         @books = Book.where(isbn: params[:search])
       elsif (params[:search_option] == "author")
-        @books = Book.where("authors ILIKE '%#{params[:search]}%'")
+        @books = Book.where("authors LIKE '%#{params[:search]}%'")
       else
         # Search by title/name
-        @books = Book.where("name ILIKE '%#{params[:search]}%'")
+        @books = Book.where("name LIKE '%#{params[:search]}%'")
       end
     else
       # Show all books

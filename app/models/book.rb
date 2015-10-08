@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   validates :isbn, uniqueness: true
   validates :isbn, numericality: true
   validates :name, presence: true, length: { maximum: 50 }
-  validates :description, presence: true, length: { maximum: 200 }
+  validates :description, length: { maximum: 200 }
   validates :authors, presence: true, length: { maximum: 100 }
   validates :authors, format: { :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
   has_many :book_transactions
