@@ -11,14 +11,10 @@
        <p><%= link_to 'Add an Admin', new_admin_path %></p>
        <p><%= link_to 'Add a Book', new_book_path %></p>
        <p><%= link_to 'Show all Books', books_path %></p>
-	<p><%= link_to 'Show all Admins', admins_path %></p>
-	<p><%= link_to 'Show all Members', members_path %></p>
-
-
-    <%end%>
-	<p style="position: absolute;top: 15px;left:  1350px"><%= link_to "Logout" ,logout_path, method: "delete" %></p>
+       <p><%= link_to 'Show all Admins', admins_path %></p>
+       <p><%= link_to 'Show all Members', members_path %></p>
+     <%end%>
 <%else%>
-
     <div style="text-align:center" >
     <h3 ><%= link_to "New User? Signup", signup_path %></h3>
 	<h3 ><%= link_to "Existing User? Login", login_path %></h3>

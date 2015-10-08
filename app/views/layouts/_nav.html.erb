@@ -1,0 +1,14 @@
+<div id="footer" class="container">
+  <br/><br/>
+  <ul class="nav">
+    
+    <li role = "presentation"><%= link_to "Home", "/" %></li>
+    <li role = "presentation"><%= link_to "Back", :back %></li>
+    
+    <% if logged_in? %>
+      <li role = "presentation"><%= link_to "View Profile", current_user %></li>
+      <li role = "presentation"><%= link_to "Logout", logout_path, method: "delete" if logged_in?%></li>
+    <%end%>
+
+  </ul>
+</div>
