@@ -2,10 +2,25 @@
 
 one:
   isbn: 1
-  name: MyString
-  authors: MyText
+  name: Book 1
+  authors: Author 1
 
 two:
-  isbn: 1
-  name: MyString
-  authors: MyText
+  isbn: 2
+  name: Book 2
+  authors: Author 2
+
+three:
+  isbn: 3
+  name: Book 3
+  authors: Author 3
+
+four:
+  isbn: 4
+  name: Book 4
+  authors: Author 4
+
+five:
+  isbn: 5
+  name: Book 5
+  authors: Author 5
