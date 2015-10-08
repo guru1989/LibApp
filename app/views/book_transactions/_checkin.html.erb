@@ -1,0 +1,21 @@
+<%= form_for(:book_transaction , url: '/checkin') do |f| %>
+    <% if @book_transaction.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@book_transaction.errors.count, "error") %> prohibited this book_transaction from being saved:</h2>
+          <ul>
+            <% @book_transaction.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <% b = Book.find(params[:id]) %>
+      <p>You are returning <%= @book.name%> <p>
+      <% f.label :book_id %><br>
+      <%= f.number_field :book_id , value: @book.id , hidden:true%>
+    </div>
+    <div class="form-group">
+      <%= f.submit " Confirm Return" %>
+    </div>
+<% end %>
