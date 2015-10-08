@@ -14,5 +14,21 @@
   <strong>Authors:</strong>
   <%= @book.authors %>
 </p>
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @book.status %>
+</p>
+
+<%if is_admin? and !@book.available?%>
+    <p>
+      <strong>Currently owned by:</strong>
+      <%= @book.current_owner.name %>
+    </p>
+<%end%>
+<%link_to "Check Out" , checkout_path(@book.id) %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> 

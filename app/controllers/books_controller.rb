@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_book, only: [:return,  :show, :edit, :update, :destroy]
   before_action :is_logged_in?
+
 
 
   # GET /books
@@ -63,21 +63,31 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    @book.destroy
-    respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
-      format.json { head :no_content }
+    if @book.destroy
+      respond_to do |format|
+        format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to books_path, notice: 'Book can not be removed since it has active checkout'
     end
+  end
+
+  def return
+    @book.update(status: "Available")
+    redirect_to root_path
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params[:isbn])
-    end
+  def set_book
+    @book = Book.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, notice:"Book not found"
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def book_params
-      params.require(:book).permit(:isbn, :name, :authors)
-    end
+  def book_params
+    params.require(:book).permit(:isbn, :name, :authors, :description)
+  end
 end

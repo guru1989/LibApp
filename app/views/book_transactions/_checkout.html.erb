@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<%= form_for(:book_transaction, url: '/checkout') do |f| %>
+    <% if @book_transaction.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@book_transaction.errors.count, "error") %> prohibited this book_transaction from being saved:</h2>
+          <ul>
+            <% @book_transaction.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <p> You have checked out <%= @book.name %> </p>
+      <p><% f.label :book_id %></p>
+      <p><%= f.number_field :book_id , value: @book.id , hidden:true%></p>
+    </div>
+    <div class="form-group">
+      <% f.label :member_id %><br>
+      <% if is_admin? %>
+          <p>Please enter the id of the member <p>
+      <%= f.text_field :member_id %>
+      <%else%>
+          <%= f.text_field :member_id , value: current_user.id, hidden:true%>
+      <%end%>
+    </div>
+    <div class="form-group">
+      <%= f.submit " Confirm Checkout" %>
+    </div>
+<% end %>

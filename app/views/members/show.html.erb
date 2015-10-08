@@ -16,6 +16,27 @@
   <%= @member.password %>
 </p>
 
+  <%if @member.checked_out_books.empty? %>
+      <p>There are no books checked out.</p>
+  <%end%>
+  <p>List of books currently checked out</p>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Book Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @member.checked_out_books.each do |book| %>
+        <tr>
+          <td><%= book.name %></td>
+          <td><%= link_to 'Show', book, class: "btn-sm btn-primary"%></td>
+          <td><%= link_to 'Return Book', checkin_path(book.id) , class: "btn-sm btn-warning"%></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 <p><%= link_to 'Edit Profile', edit_member_path(@member)%>
 <p><%= link_to 'Logout', logout_path, method: "delete" %><p>
 </div>
