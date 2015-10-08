@@ -25,9 +25,10 @@
 
         <% if is_admin? %>
           <td><%= link_to 'Edit', edit_book_path(book) %></td>
-          <td><%= link_to 'View Details', book_path(book) %></td>
+
           <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
+        <td><%= link_to 'View Details', book_path(book) %></td>
         <td>
         <%if book.status == "Available" %>
 

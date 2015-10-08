@@ -11,7 +11,7 @@
     <% end %>
     <div class="form-group">
       <% b = Book.find(params[:id]) %>
-      <p>You are returning <%= @book.name%> <p>
+      <p>Are you sure you want to return  <%= @book.name%>?<p>
       <% f.label :book_id %><br>
       <%= f.number_field :book_id , value: @book.id , hidden:true%>
     </div>

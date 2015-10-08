@@ -11,7 +11,7 @@
         </div>
     <% end %>
     <div class="form-group">
-      <p> You have checked out <%= @book.name %> </p>
+      <p> Are you sure you want to check out <%= @book.name %>? </p>
       <p><% f.label :book_id %></p>
       <p><%= f.number_field :book_id , value: @book.id , hidden:true%></p>
     </div>
